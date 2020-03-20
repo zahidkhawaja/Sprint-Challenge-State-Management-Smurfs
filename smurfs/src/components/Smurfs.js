@@ -9,6 +9,9 @@ const Smurfs = () => {
     return (
         <div>
             <h2>All Smurfs</h2>
+            {state.smurfs.map(smurf => (
+                <p>{smurf.name}</p>
+            ))}
             <button onClick = {() => dispatch(updateVillage())}>Update Village</button>
         </div>
     )
