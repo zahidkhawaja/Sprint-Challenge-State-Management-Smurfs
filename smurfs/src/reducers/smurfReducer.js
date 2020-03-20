@@ -8,7 +8,7 @@ export const smurfReducer = (state = initialState, action) => {
         case "UPDATE_VILLAGE":
             return {
                 ...state,
-                smurfs: action.payload
+                smurfs: action.payload.reverse()
             };
         default:
             return state;

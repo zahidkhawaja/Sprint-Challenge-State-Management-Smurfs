@@ -9,15 +9,16 @@ const Smurfs = () => {
 
     useEffect(() => {
         dispatch(updateVillage());
-    }, [state]);
+    }, []);
 
 
     return (
         <div className = "allsmurfs">
             {/* <button onClick = {() => dispatch(updateVillage())}>Update Village</button> */}
-            <h2>All Smurfs</h2>
             {state.smurfs.map(smurf => (
+                <div id = {smurf.id} className = "smurfdiv">
                 <p>{smurf.name}</p>
+                </div>
             ))}
         </div>
     )

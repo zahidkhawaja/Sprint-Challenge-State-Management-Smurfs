@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { updateVillage } from "../actions/index";
 
 const SmurfForm = () => {
+    const dispatch = useDispatch();
+    const [status, setStatus] = useState(false);
     const [smurfData, setSmurfData] = useState({
         name: "",
         age: "",
@@ -16,8 +20,13 @@ const SmurfForm = () => {
     const onSubmit = e => {
         e.preventDefault();
         axios.post("http://localhost:3333/smurfs", smurfData)
+        .then(setStatus(!status))
         .then(res => console.log("POST", res));
     }
+
+    useEffect(() => {
+        dispatch(updateVillage());
+    }, [status]);
 
     return (
         <div className = "addSmurfForm">
