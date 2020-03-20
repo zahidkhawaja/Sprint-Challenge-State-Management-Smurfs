@@ -3,5 +3,13 @@ const initialState = {
 };
 
 export const smurfReducer = (state = initialState, action) => {
-    return state;
-}
+    switch(action.type) {
+        case "UPDATE_VILLAGE":
+            return {
+                ...state,
+                smurfs: action.payload
+            };
+        default:
+            return state;
+    }
+};
