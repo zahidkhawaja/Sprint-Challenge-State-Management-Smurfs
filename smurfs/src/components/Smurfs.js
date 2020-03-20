@@ -7,12 +7,12 @@ const Smurfs = () => {
     console.log("NEW STATE", state);
     const dispatch = useDispatch();
     return (
-        <div>
+        <div className = "allsmurfs">
+            <button onClick = {() => dispatch(updateVillage())}>Update Village</button>
             <h2>All Smurfs</h2>
             {state.smurfs.map(smurf => (
                 <p>{smurf.name}</p>
             ))}
-            <button onClick = {() => dispatch(updateVillage())}>Update Village</button>
         </div>
     )
 }
