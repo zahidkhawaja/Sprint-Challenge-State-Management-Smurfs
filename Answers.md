@@ -7,4 +7,4 @@ Application state is for the entire app (global), while component state is local
 1. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 Redux dispatches actions synchronously. For asynchronous tasks (for example, when fetching data from an API), you use redux-thunk, which lets you create action creators that return a function instead of an action. This delays the action until a certain condition is met.
 1. What is your favorite state management system you've learned and this sprint? Please explain why!
-Context API is nice because it's modular and doesn't require you to use global state for the entire app. You can use context api where needed. Also, context api is built in.
+Context API is nice because it's modular and doesn't require you to use global state for the entire app. You can use context api where needed. Also, context api is built in. Ultimately, it all comes down to using the right tool for the job.
