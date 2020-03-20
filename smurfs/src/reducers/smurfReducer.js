@@ -3,6 +3,7 @@ const initialState = {
 };
 
 export const smurfReducer = (state = initialState, action) => {
+    console.log("INITIAL STATE", state);
     switch(action.type) {
         case "UPDATE_VILLAGE":
             return {
@@ -11,5 +12,5 @@ export const smurfReducer = (state = initialState, action) => {
             };
         default:
             return state;
-    }
+    };
 };
