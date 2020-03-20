@@ -1,12 +1,20 @@
 import React from "react";
 import "./App.css";
+import Smurfs from "./Smurfs";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+
+const store = createStore(reducer, applyMiddleware(thunk));
 
 const App = () => {
     return (
+      <Provider store = {store}>
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
-        <p>Just cleaning up.</p>
+        <Smurfs/>
       </div>
+      </Provider>
     );
   }
 
